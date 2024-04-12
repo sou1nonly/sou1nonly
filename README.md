@@ -1,6 +1,6 @@
 - 👋 Hi, I’m neeraj
-- 👀 I’m interested in ... web development
-- 🌱 I’m currently learning ... C/C++
+- 👀 I’m interested in ... Data Science
+- 🌱 I’m currently learning ... Python and SQL
 - 💞️ I’m looking to collaborate on ...
 - 📫 How to reach me ...
 
