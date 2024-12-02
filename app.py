@@ -37,7 +37,7 @@ def clean_text(text):
 
 def preprocess(text):
     cleaned_text = clean_text(text)
-    nlp = spacy.load("en_core_web_sm-3.5.0-py3-none-any")
+    nlp = spacy.load("en_core_web_sm")
     doc = nlp(cleaned_text)
     return " ".join(token.lemma_ for token in doc if len(token) > 2)
 
