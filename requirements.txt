@@ -2,3 +2,4 @@ joblib
 spacy
 scikit-learn
 nltk
+os-sys
