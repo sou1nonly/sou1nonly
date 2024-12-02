@@ -2,6 +2,26 @@ import streamlit as st
 import joblib
 import string
 import spacy
+import os
+
+def install(package):
+    """Install a package using pip."""
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+# Get the current directory where the script is located
+current_directory = os.path.dirname(os.path.abspath(__file__))
+
+# Path to the wheel file
+wheel_file = os.path.join(current_directory, "en_core_web_sm-3.5.0-py3-none-any.whl")
+
+# Install the package if it is not already installed
+try:
+    import spacy
+except ImportError:
+    print("Spacy is not installed. Installing...")
+    install("spacy")
+
+
 
 
 st.set_page_config(page_title="Spam Email Detector", page_icon="✉️")
@@ -17,7 +37,7 @@ def clean_text(text):
 
 def preprocess(text):
     cleaned_text = clean_text(text)
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load("en_core_web_sm-3.5.0-py3-none-any")
     doc = nlp(cleaned_text)
     return " ".join(token.lemma_ for token in doc if len(token) > 2)
 
