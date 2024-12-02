@@ -1,3 +1,5 @@
+numpy
+pandas
 joblib
 spacy
 scikit-learn
