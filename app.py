@@ -7,11 +7,6 @@ import spacy
 # Load the model
 nlp = spacy.load("en_core_web_sm-3.5.0-py3-none-any.whl")
 
-# Example usage
-doc = nlp("Hello, world!")
-for token in doc:
-    print(token.text, token.pos_)
-
 st.set_page_config(page_title="Spam Email Detector", page_icon="✉️")
 
 @st.cache_resource(ttl=3600)
