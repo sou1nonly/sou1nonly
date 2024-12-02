@@ -2,6 +2,15 @@ import streamlit as st
 import joblib
 import string
 import spacy
+import subprocess
+import sys
+
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+wheel_url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl"
+
+install(wheel_url)#--------------------------------------
 
 st.set_page_config(page_title="Spam Email Detector", page_icon="✉️")
 
