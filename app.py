@@ -4,13 +4,23 @@ import string
 import spacy
 import subprocess
 import sys
+import pkg_resources
 
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 
+# URL of the wheel file
 wheel_url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl"
 
-install(wheel_url)#--------------------------------------
+# Check if the package is already installed
+package_name = "en_core_web_sm"
+installed_packages = pkg_resources.working_set
+installed = {pkg.key for pkg in installed_packages}
+
+if package_name not in installed:
+    install(wheel_url)
+else:
+    print(f"{package_name} is already installed.")
 
 st.set_page_config(page_title="Spam Email Detector", page_icon="✉️")
 
