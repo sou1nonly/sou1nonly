@@ -2,25 +2,15 @@ import streamlit as st
 import joblib
 import string
 import spacy
-import subprocess
-import sys
-import pkg_resources
+import spacy
 
-def install(package):
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+# Load the model
+nlp = spacy.load("en_core_web_sm")
 
-# URL of the wheel file
-wheel_url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.5.0/en_core_web_sm-3.5.0-py3-none-any.whl"
-
-# Check if the package is already installed
-package_name = "en_core_web_sm"
-installed_packages = pkg_resources.working_set
-installed = {pkg.key for pkg in installed_packages}
-
-if package_name not in installed:
-    install(wheel_url)
-else:
-    print(f"{package_name} is already installed.")
+# Example usage
+doc = nlp("Hello, world!")
+for token in doc:
+    print(token.text, token.pos_)
 
 st.set_page_config(page_title="Spam Email Detector", page_icon="✉️")
 
