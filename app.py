@@ -5,7 +5,7 @@ import spacy
 import spacy
 
 # Load the model
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm-3.5.0-py3-none-any.whl")
 
 # Example usage
 doc = nlp("Hello, world!")
