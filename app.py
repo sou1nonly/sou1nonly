@@ -1,48 +1,24 @@
 import streamlit as st
 import joblib
 import string
-import spacy
-import os
-
-def install(package):
-    """Install a package using pip."""
-    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
-
-# Get the current directory where the script is located
-current_directory = os.path.dirname(os.path.abspath(__file__))
-
-# Path to the wheel file
-wheel_file = os.path.join(current_directory, "en_core_web_sm-3.5.0-py3-none-any.whl")
-
-# Install the package if it is not already installed
-try:
-    import spacy
-except ImportError:
-    print("Spacy is not installed. Installing...")
-    install("spacy")
-
-
-
+import time
 
 st.set_page_config(page_title="Spam Email Detector", page_icon="✉️")
 
-@st.cache_resource(ttl=3600)
-def load_model():
-    model = joblib.load('spam_detection_model.pkl')
-    vectorizer = joblib.load('count_vectorizer.pkl')
-    return model, vectorizer
+model = joblib.load('spam_detection_model.pkl')
+vectorizer = joblib.load('count_vectorizer.pkl')
 
 def clean_text(text):
-    return ''.join(char if char in string.ascii_letters + ' ' else ' ' for char in text).strip()
-
-def preprocess(text):
-    cleaned_text = clean_text(text)
-    nlp = spacy.load("en_core_web_sm")
-    doc = nlp(cleaned_text)
-    return " ".join(token.lemma_ for token in doc if len(token) > 2)
+    text = text.lower()
+    text = ''.join(c for c in text if c in string.ascii_letters or c == ' ')
+    return text
 
 def classify_email(model, vectorizer, email):
-    return model.predict(vectorizer.transform([email]))
+    cleaned_email = clean_text(email)
+    vectorized_email = vectorizer.transform([cleaned_email])
+    prediction = model.predict(vectorized_email)[0]
+    probability = model.predict_proba(vectorized_email)[0][1] * 100
+    return prediction, probability
 
 def main():
     st.title("Spam Email Detector")
@@ -50,18 +26,20 @@ def main():
 
     if st.button("Check for Spam"):
         if user_input:
-            model, vectorizer = load_model()
-            processed_input = preprocess(user_input)
-            st.write("Processed Input:", processed_input)  
+            with st.spinner('Processing...'):
+                # Simulate processing time (adjust as needed)
+                time.sleep(2)
 
-            prediction = classify_email(model, vectorizer, processed_input)  
+                prediction, probability = classify_email(model, vectorizer, user_input)
 
-            if prediction == 1:
-                st.error('Spam Detected!')
-            else:
-                st.success('Not Spam')
+                if prediction == 1:
+                    st.error('Spam Detected!')
+                    st.write(f"Probability of being spam: {probability:.2f}%")
+                else:
+                    st.success('Not Spam')
+                    st.write(f"Probability of being spam: {probability:.2f}%")
         else:
-            st.warning("Please enter the text to detect!")
+            st.warning("Please enter the email text.")
 
 if __name__ == "__main__":
     main()
