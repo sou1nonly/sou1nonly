@@ -18,7 +18,7 @@ I am passionate about **Machine Learning and Data Science**, with a strong found
 🔹 **Bellabeat Fitbit Case Study** – Analyzed user trends using SQL & Python for insights.  
 
 ## 📫 Connect with Me  
-🔗 [LinkedIn](https://www.linkedin.com/in/neeraj-thakur-a64488271/))  
+🔗 [LinkedIn](https://www.linkedin.com/in/neeraj-thakur-a64488271/)
 💻 [GitHub](https://github.com/sou1nonly)  
 📧 neeraj12200981@davuniversity.org 
 
