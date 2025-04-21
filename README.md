@@ -12,8 +12,7 @@ I am passionate about **Machine Learning and Data Science**, with a strong found
 - Tools: Streamlit, Google Gemini API, Git    
 
 ## 📫 Connect with Me  
-🔗 [LinkedIn](https://www.linkedin.com/in/neeraj-thakur-a64488271/)
-💻 [GitHub](https://github.com/sou1nonly)  
+🔗 [LinkedIn](https://www.linkedin.com/in/neeraj-thakur-a64488271/) 
 📧 neeraj12200981@davuniversity.org 
 
 Always learning, building, and exploring new possibilities in **AI and Machine Learning**! 🚀  
