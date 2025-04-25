@@ -9,7 +9,7 @@ I am passionate about **Machine Learning and Data Science**, with a strong found
 - Programming: Python, SQL  
 - Data Science: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn  
 - Machine Learning: Supervised & Unsupervised Learning, NLP, Predictive Analytics  
-- Tools: Streamlit, Google Gemini API, Git    
+- Tools: Streamlit, Google Gemini API, Langchain, Pinecone, Git 
 
 ## 📫 Connect with Me  
 🔗 [LinkedIn](https://www.linkedin.com/in/neeraj-thakur-a64488271/) 
