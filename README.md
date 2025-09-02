@@ -1,18 +1,7 @@
-# 👋 Hi, I'm Neeraj Thakur!  
+# 👋 Hi, I'm Neeraj  
 
-🚀 **Aspiring Machine Learning & Data Science Enthusiast** | Python | AI | Data-Driven Problem Solver  
+I enjoy building things around **Machine Learning, AI, and Data Science**.  
+Most of my work is about using **Python, ML models, and data** to solve problems.  
+I’ve played from **chatbots and prediction models** to **visual dashboards**.  
 
-## 🔍 About Me  
-I am passionate about **Machine Learning and Data Science**, with a strong foundation in **Python, SQL, and statistical analysis**. I enjoy solving real-world problems using **predictive modeling, AI, and data-driven decision-making**.  
-
-🔹 **Key Skills:**  
-- Programming: Python, SQL  
-- Data Science: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn  
-- Machine Learning: Supervised & Unsupervised Learning, NLP, Predictive Analytics  
-- Tools: Streamlit, Google Gemini API, Langchain, Pinecone, Git 
-
-## 📫 Connect with Me  
-🔗 [LinkedIn](https://www.linkedin.com/in/neeraj-thakur-a64488271/) 
-📧 neeraj12200981@davuniversity.org 
-
-Always learning, building, and exploring new possibilities in **AI and Machine Learning**! 🚀  
+💡 Always learning, experimenting, and turning ideas into working projects.  
